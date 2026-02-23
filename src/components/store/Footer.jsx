@@ -1,6 +1,7 @@
-import { useLanguage } from '../LanguageContext';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { useLanguage } from "../LanguageContext";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const socials = [
   {
@@ -50,29 +51,33 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <img
-              src="/logo.png"
-              alt="Siam Shop Logo"
-              width={52}
-              height={52}
-              className="mr-1"
-            />
+                src="/logo.png"
+                alt="Siam Shop Logo"
+                width={52}
+                height={52}
+                className="mr-1"
+              />
               {/* <span className="text-2xl">🏯</span> */}
-              <span className="text-lg font-bold text-white tracking-tight">Siam Shop</span>
-            </div>
+              <span className="text-lg font-bold text-white tracking-tight">
+                Siam Shop
+              </span>
+            </Link>
             <p className="text-sm leading-relaxed text-stone-400">
-              {t('footerAbout')}
+              {t("footerAbout")}
             </p>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4 uppercase tracking-wider">{t('contactUs')}</h3>
+            <h3 className="text-sm font-semibold text-white mb-4 uppercase tracking-wider">
+              {t("contactUs")}
+            </h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-amber-400 shrink-0" />
-                <span className="text-sm">{t('address')}</span>
+                <span className="text-sm">{t("address")}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />
@@ -87,44 +92,47 @@ export default function Footer() {
 
           {/* Hours */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4 uppercase tracking-wider">{t('openHours')}</h3>
+            <h3 className="text-sm font-semibold text-white mb-4 uppercase tracking-wider">
+              {t("openHours")}
+            </h3>
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-amber-400 shrink-0" />
-                <span className="text-sm">{t('monFri')}</span>
+                <span className="text-sm">{t("monFri")}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-amber-400 shrink-0" />
-                <span className="text-sm">{t('sat')}</span>
+                <span className="text-sm">{t("sat")}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-amber-400 shrink-0" />
-                <span className="text-sm">{t('sun')}</span>
+                <span className="text-sm">{t("sun")}</span>
               </div>
             </div>
           </div>
 
           {/* Social */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4 uppercase tracking-wider">{t('followUs')}</h3>
+            <h3 className="text-sm font-semibold text-white mb-4 uppercase tracking-wider">
+              {t("followUs")}
+            </h3>
             <div className="flex gap-3">
               <SocialLinks />
-            
             </div>
 
             <a href="/dashboard">
-              <h3 className="text-sm font-semibold text-white mt-6 uppercase tracking-wider">{t('dashboard')}</h3>
+              <h3 className="text-sm font-semibold text-white mt-6 uppercase tracking-wider">
+                {t("dashboard")}
+              </h3>
             </a>
           </div>
         </div>
 
         <div className="border-t border-stone-800 mt-12 pt-8 space-y-2 text-center">
           <p className="text-xs text-stone-500">
-            © 2026  Siam Shop. All rights reserved.
+            © 2026 Siam Shop. All rights reserved.
           </p>
-          <p className="text-xs text-stone-500">
-            Made with ❤️ by duyenle.com.
-          </p>
+          <p className="text-xs text-stone-500">Made with ❤️ by duyenle.com.</p>
         </div>
       </div>
     </footer>

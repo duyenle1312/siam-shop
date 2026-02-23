@@ -13,8 +13,8 @@ function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { label: t("home"), page: "Home" },
-    { label: t("products"), page: "Products" },
+    { label: t("home"), page: "Home", url: "/" },
+    { label: t("products"), page: "Products", url: "/products" },
     // { label: t('dashboard'), page: 'Dashboard' },
   ];
 
@@ -24,7 +24,7 @@ function Navbar() {
         <div className="flex items-center justify-between h-18">
           {/* Logo */}
           <Link
-            to={createPageUrl("Home")}
+            to="/"
             className="flex items-center gap-2.5"
           >
             <img
@@ -45,7 +45,7 @@ function Navbar() {
             {navLinks.map((link) => (
               <Link
                 key={link.page}
-                to={createPageUrl(link.page)}
+                to={link.url}
                 className="px-4 py-2 rounded-lg text-base font-medium text-stone-600 hover:text-stone-900 hover:bg-stone-50 transition-all"
               >
                 {link.label}

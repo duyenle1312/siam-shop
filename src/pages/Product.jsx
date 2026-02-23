@@ -6,7 +6,7 @@ import { Minus, Plus, ArrowLeft, ShoppingBag } from "lucide-react";
 import { useParams } from "react-router-dom";
 import { useCart } from "@/components/store/CartContext";
 
-export default function ProductDetail() {
+export default function Product() {
   const { language, t } = useLanguage();
 
   const { slug } = useParams();
