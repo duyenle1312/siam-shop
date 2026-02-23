@@ -120,11 +120,11 @@ export default function Footer() {
               <SocialLinks />
             </div>
 
-            <a href="/dashboard">
+            <Link to="/dashboard">
               <h3 className="text-sm font-semibold text-white mt-6 uppercase tracking-wider">
                 {t("dashboard")}
               </h3>
-            </a>
+            </Link>
           </div>
         </div>
 

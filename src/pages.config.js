@@ -1,21 +1,3 @@
-// import Home from './pages/Home.jsx';
-// import Products from './pages/Products.jsx';
-// import Dashboard from './pages/Dashboard.jsx';
-// import ProductDetail from './pages/ProductDetail.jsx';
-// import __Layout from './Layout.jsx';
-
-// export const PAGES = {
-//   Home,
-//   Products,
-//   Dashboard,
-//   ProductDetail
-// };
-
-// export const pagesConfig = {
-//   mainPage: "Home",
-//   Pages: PAGES,
-//   Layout: __Layout,
-// };
 /**
  * pages.config.js - Page routing configuration
  * 
