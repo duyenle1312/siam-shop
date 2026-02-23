@@ -86,7 +86,7 @@ export const mockProducts = [
     },
     price: 8.90,
     category: "sauces_pastes",
-    image: "https://images.unsplash.com/photo-1528750997573-59b0d0ede3c5?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1678225105802-01949b1dff0d?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     inventory: 50,
     featured: true,
   },

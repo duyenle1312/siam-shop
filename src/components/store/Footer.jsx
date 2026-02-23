@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <span className="text-2xl">🏯</span>
-              <span className="text-lg font-bold text-white tracking-tight">Thai Market BG</span>
+              <span className="text-lg font-bold text-white tracking-tight">Siam Shop</span>
             </div>
             <p className="text-sm leading-relaxed text-stone-400">
               {t('footerAbout')}
@@ -34,7 +34,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <span className="text-sm">info@thaimarketbg.com</span>
+                <span className="text-sm">info@siamshop.bg</span>
               </div>
             </div>
           </div>
@@ -72,12 +72,16 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+
+            <a href="/dashboard">
+              <h3 className="text-sm font-semibold text-white mt-6 uppercase tracking-wider">{t('dashboard')}</h3>
+            </a>
           </div>
         </div>
 
         <div className="border-t border-stone-800 mt-12 pt-8 text-center">
           <p className="text-xs text-stone-500">
-            © 2026 Thai Market BG. All rights reserved.
+            © 2026  Siam Shop. All rights reserved.
           </p>
         </div>
       </div>

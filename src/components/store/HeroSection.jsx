@@ -13,10 +13,10 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?w=1400&h=600&fit=crop"
-          alt="Thai market"
+          alt="Siam Shop"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-stone-950/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-stone-950/80 via-stone-950/60 to-transparent" />
       </div>
 
       <div className="relative px-6 md:px-12 lg:px-20 py-20 md:py-32 lg:py-40 max-w-7xl mx-auto">
@@ -52,7 +52,7 @@ export default function HeroSection() {
       </div>
 
       {/* Decorative */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-stone-50 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-stone-50 to-transparent" />
     </section>
   );
 }

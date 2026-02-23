@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { mockProducts } from '../components/store/mockData';
 import HeroSection from '../components/store/HeroSection';
@@ -73,10 +72,10 @@ export default function Home() {
                 <Link
                   key={cat}
                   to={createPageUrl('Products') + `?category=${cat}`}
-                  className="group relative aspect-[4/3] rounded-2xl overflow-hidden"
+                  className="group relative aspect-4/3 rounded-2xl overflow-hidden"
                 >
                   <img src={catImages[i]} alt={t(cat)} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-white font-bold text-sm md:text-base">{t(cat)}</h3>
                   </div>

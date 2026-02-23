@@ -28,7 +28,7 @@ export default function NotificationBanner() {
   if (visible.length === 0) return null;
 
   return (
-    <div className="space-y-2 px-4 md:px-8 pt-4">
+    <div className="">
       <AnimatePresence>
         {visible.map(notification => {
           const Icon = typeIcons[notification.type] || Info;
@@ -38,12 +38,14 @@ export default function NotificationBanner() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, height: 0 }}
-              className={`flex items-start gap-3 p-3.5 rounded-xl border ${typeColors[notification.type]} transition-all`}
+              className={`flex items-start gap-3 p-3.5 border ${typeColors[notification.type]} transition-all`}
             >
-              <Icon className="w-4.5 h-4.5 mt-0.5 shrink-0 opacity-70" />
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold">{notification.title[language]}</p>
-                <p className="text-xs opacity-75 mt-0.5">{notification.message[language]}</p>
+             
+              <div className="flex-1 min-w-0 text-center">
+                <div className='flex flex-row gap-2 justify-center'>
+                 <Icon className="w-4 h-4 mt-0.5 shrink-0 opacity-70" />
+                <p className="text-sm font-semibold">{notification.title[language]}</p>{" "} </div> 
+                <span className="text-xs opacity-75 mt-0.5">{notification.message[language]}</span>
               </div>
               <button
                 onClick={() => setDismissed(prev => [...prev, notification.id])}

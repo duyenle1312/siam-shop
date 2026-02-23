@@ -1,10 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { LanguageProvider, useLanguage } from './components/LanguageContext';
 import { CartProvider, useCart } from './components/store/CartContext';
 import CartDrawer from './components/store/CartDrawer';
-import { ShoppingBag, Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { ShoppingBag, Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
@@ -16,7 +15,7 @@ function Navbar() {
   const navLinks = [
     { label: t('home'), page: 'Home' },
     { label: t('products'), page: 'Products' },
-    { label: t('dashboard'), page: 'Dashboard' },
+    // { label: t('dashboard'), page: 'Dashboard' },
   ];
 
   return (
@@ -26,7 +25,7 @@ function Navbar() {
           {/* Logo */}
           <Link to={createPageUrl('Home')} className="flex items-center gap-2.5">
             <span className="text-xl">🏯</span>
-            <span className="text-base font-bold text-stone-900 tracking-tight hidden sm:block">Thai Market BG</span>
+            <span className="text-base font-bold text-stone-900 tracking-tight hidden sm:block">Siam Shop</span>
           </Link>
 
           {/* Desktop Nav */}

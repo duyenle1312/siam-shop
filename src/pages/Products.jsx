@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { mockProducts } from '../components/store/mockData';
 import ProductCard from '../components/store/ProductCard';
@@ -6,7 +6,7 @@ import CategoryFilter from '../components/store/CategoryFilter';
 import Footer from '../components/store/Footer';
 import { Search } from 'lucide-react';
 import { Input } from "@/components/ui/input";
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 export default function Products() {
   const { language, t } = useLanguage();
@@ -43,11 +43,12 @@ export default function Products() {
         <div className="space-y-4 mb-8">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
-            <Input
+            <input
               placeholder={t('searchProducts')}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="pl-11 h-12 rounded-xl border-stone-200 bg-white focus-visible:ring-emerald-500"
+              className="pl-11 h-12 rounded-xl border border-stone-200 bg-white focus-visible:ring-emerald-500 w-full"
+              type="text"
             />
           </div>
           <CategoryFilter selected={category} onSelect={setCategory} />

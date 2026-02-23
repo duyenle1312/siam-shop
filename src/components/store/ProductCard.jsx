@@ -42,7 +42,7 @@ export default function ProductCard({ product, onClick }) {
           </div>
         )}
         <div className="absolute top-3 right-3">
-          <span className="bg-white/90 backdrop-blur-sm text-[10px] font-medium text-stone-500 px-2 py-1 rounded-full">
+          <span className="bg-white/90 backdrop-blur-xs text-[10px] font-medium text-stone-500 px-2 py-1 rounded-full">
             {t(product.category)}
           </span>
         </div>
