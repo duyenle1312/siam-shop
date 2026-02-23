@@ -1,0 +1,199 @@
+import React, { createContext, useContext, useState } from 'react';
+
+const LanguageContext = createContext();
+
+const translations = {
+  en: {
+    // Navigation
+    home: "Home",
+    products: "Products",
+    cart: "Cart",
+    dashboard: "Dashboard",
+    allCategories: "All Categories",
+    
+    // Categories
+    rice_noodles: "Rice & Noodles",
+    sauces_pastes: "Sauces & Pastes",
+    spices_herbs: "Spices & Herbs",
+    snacks: "Snacks",
+    drinks: "Drinks",
+    frozen: "Frozen",
+    fresh: "Fresh Produce",
+    canned: "Canned Goods",
+    
+    // Storefront
+    heroTitle: "Authentic Thai Flavors",
+    heroSubtitle: "Your gateway to Thailand's finest ingredients in Bulgaria",
+    shopNow: "Shop Now",
+    featuredProducts: "Featured Products",
+    searchProducts: "Search products...",
+    addToCart: "Add to Cart",
+    outOfStock: "Out of Stock",
+    viewAll: "View All",
+    price: "Price",
+    inStock: "In Stock",
+    items: "items",
+    
+    // Cart
+    yourCart: "Your Cart",
+    emptyCart: "Your cart is empty",
+    total: "Total",
+    checkout: "Checkout",
+    remove: "Remove",
+    continueShopping: "Continue Shopping",
+    
+    // Product Detail
+    description: "Description",
+    relatedProducts: "You May Also Like",
+    backToShop: "Back to Shop",
+    quantity: "Quantity",
+    
+    // Dashboard
+    dashboardTitle: "Store Dashboard",
+    manageProducts: "Manage Products",
+    manageNotifications: "Notifications",
+    overview: "Overview",
+    totalProducts: "Total Products",
+    lowStock: "Low Stock",
+    activeNotifications: "Active Notices",
+    totalRevenue: "Est. Revenue",
+    
+    // Product Management
+    addProduct: "Add Product",
+    editProduct: "Edit Product",
+    productName: "Product Name",
+    productDescription: "Description",
+    category: "Category",
+    uploadImage: "Upload Image",
+    inventory: "Inventory",
+    save: "Save",
+    cancel: "Cancel",
+    delete: "Delete",
+    actions: "Actions",
+    
+    // Notifications
+    addNotification: "Add Notification",
+    notificationTitle: "Title",
+    notificationMessage: "Message",
+    type: "Type",
+    active: "Active",
+    inactive: "Inactive",
+    openingHours: "Opening Hours",
+    newProduct: "New Product",
+    promotion: "Promotion",
+    general: "General",
+    status: "Status",
+    
+    // Footer
+    footerAbout: "Bringing the authentic taste of Thailand to Bulgaria since 2020.",
+    contactUs: "Contact Us",
+    followUs: "Follow Us",
+    openHours: "Opening Hours",
+    monFri: "Mon - Fri: 9:00 - 20:00",
+    sat: "Sat: 10:00 - 18:00",
+    sun: "Sun: Closed",
+    address: "ul. Vitosha 45, Sofia, Bulgaria",
+    currency: "лв",
+  },
+  bg: {
+    home: "Начало",
+    products: "Продукти",
+    cart: "Кошница",
+    dashboard: "Табло",
+    allCategories: "Всички категории",
+    
+    rice_noodles: "Ориз и Нудли",
+    sauces_pastes: "Сосове и Пасти",
+    spices_herbs: "Подправки и Билки",
+    snacks: "Снаксове",
+    drinks: "Напитки",
+    frozen: "Замразени",
+    fresh: "Пресни продукти",
+    canned: "Консерви",
+    
+    heroTitle: "Автентични тайландски вкусове",
+    heroSubtitle: "Вашият портал към най-добрите съставки от Тайланд в България",
+    shopNow: "Пазарувай",
+    featuredProducts: "Избрани продукти",
+    searchProducts: "Търси продукти...",
+    addToCart: "Добави в кошницата",
+    outOfStock: "Изчерпан",
+    viewAll: "Виж всички",
+    price: "Цена",
+    inStock: "В наличност",
+    items: "артикула",
+    
+    yourCart: "Вашата кошница",
+    emptyCart: "Кошницата е празна",
+    total: "Общо",
+    checkout: "Поръчай",
+    remove: "Премахни",
+    continueShopping: "Продължи пазаруването",
+    
+    description: "Описание",
+    relatedProducts: "Може да ви хареса също",
+    backToShop: "Обратно към магазина",
+    quantity: "Количество",
+    
+    dashboardTitle: "Табло на магазина",
+    manageProducts: "Управление на продукти",
+    manageNotifications: "Известия",
+    overview: "Преглед",
+    totalProducts: "Общо продукти",
+    lowStock: "Ниска наличност",
+    activeNotifications: "Активни известия",
+    totalRevenue: "Прибл. приходи",
+    
+    addProduct: "Добави продукт",
+    editProduct: "Редактирай продукт",
+    productName: "Име на продукт",
+    productDescription: "Описание",
+    category: "Категория",
+    uploadImage: "Качи снимка",
+    inventory: "Наличност",
+    save: "Запази",
+    cancel: "Отказ",
+    delete: "Изтрий",
+    actions: "Действия",
+    
+    addNotification: "Добави известие",
+    notificationTitle: "Заглавие",
+    notificationMessage: "Съобщение",
+    type: "Тип",
+    active: "Активно",
+    inactive: "Неактивно",
+    openingHours: "Работно време",
+    newProduct: "Нов продукт",
+    promotion: "Промоция",
+    general: "Общо",
+    status: "Статус",
+    
+    footerAbout: "Доставяме автентичния вкус на Тайланд в България от 2020г.",
+    contactUs: "Свържете се с нас",
+    followUs: "Последвайте ни",
+    openHours: "Работно време",
+    monFri: "Пон - Пет: 9:00 - 20:00",
+    sat: "Съб: 10:00 - 18:00",
+    sun: "Нед: Затворено",
+    address: "ул. Витоша 45, София, България",
+    currency: "лв",
+  }
+};
+
+export function LanguageProvider({ children }) {
+  const [language, setLanguage] = useState('en');
+  
+  const t = (key) => translations[language]?.[key] || translations.en[key] || key;
+  
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+}
+
+export function useLanguage() {
+  const context = useContext(LanguageContext);
+  if (!context) throw new Error('useLanguage must be used within LanguageProvider');
+  return context;
+}
