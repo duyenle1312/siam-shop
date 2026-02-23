@@ -11,15 +11,15 @@ export default function ProductCard({ product, onClick }) {
   const isLowStock = product.inventory > 0 && product.inventory <= 5;
 
   return (
-    <Link
-      to={`/product/${product.slug}`} 
-    >
+    <div>
       <motion.div
         layout
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="group relative bg-white rounded-2xl overflow-hidden border border-stone-100 hover:border-stone-200 hover:shadow-xl hover:shadow-stone-100/50 transition-all duration-500"
       >
+        <Link
+          to={`/product/${product.slug}`}>
         <div
           className="relative aspect-square overflow-hidden cursor-pointer"
           onClick={() => onClick?.(product)}
@@ -49,11 +49,14 @@ export default function ProductCard({ product, onClick }) {
               {t(product.category)}
             </span>
           </div>
-        </div>
+          </div>
+        </Link>
 
         <div className="p-4">
+          <Link
+          to={`/product/${product.slug}`}>
           <h3
-            className="font-semibold text-stone-800 text-base leading-snug mb-1 cursor-pointer hover:text-emerald-700 transition-colors line-clamp-2"
+            className="font-semibold text-stone-800 text-base leading-snug mb-1 cursor-pointer hover:text-emerald-700 transition-colors line-clamp-1"
             onClick={() => onClick?.(product)}
           >
             {product.name[language]}
@@ -61,6 +64,7 @@ export default function ProductCard({ product, onClick }) {
           <p className="text-sm text-stone-400 line-clamp-1 mb-3">
             {product.description[language]}
           </p>
+          </Link>
           <div className="flex md:flex-row flex-col md:gap-0 gap-2 items-center justify-between ">
             <span className="text-lg font-bold text-stone-900">
               {product.price.toFixed(2)}{" "}
@@ -92,6 +96,6 @@ export default function ProductCard({ product, onClick }) {
           </div>
         </div>
       </motion.div>{" "}
-    </Link>
+    </div>
   );
 }
