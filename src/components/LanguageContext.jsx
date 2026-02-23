@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 const LanguageContext = createContext();
 
@@ -10,7 +10,7 @@ const translations = {
     cart: "Cart",
     dashboard: "Dashboard",
     allCategories: "All Categories",
-    
+
     // Categories
     rice_noodles: "Rice & Noodles",
     sauces_pastes: "Sauces & Pastes",
@@ -20,7 +20,7 @@ const translations = {
     frozen: "Frozen",
     fresh: "Fresh Produce",
     canned: "Canned Goods",
-    
+
     // Storefront
     heroTitle: "Authentic Thai Flavors",
     heroSubtitle: "Your gateway to Thailand's finest ingredients in Bulgaria",
@@ -33,7 +33,7 @@ const translations = {
     price: "Price",
     inStock: "In Stock",
     items: "items",
-    
+
     // Cart
     yourCart: "Your Cart",
     emptyCart: "Your cart is empty",
@@ -41,13 +41,13 @@ const translations = {
     checkout: "Checkout",
     remove: "Remove",
     continueShopping: "Continue Shopping",
-    
+
     // Product Detail
     description: "Description",
     relatedProducts: "You May Also Like",
     backToShop: "Back to Shop",
     quantity: "Quantity",
-    
+
     // Dashboard
     dashboardTitle: "Store Dashboard",
     manageProducts: "Manage Products",
@@ -57,7 +57,7 @@ const translations = {
     lowStock: "Low Stock",
     activeNotifications: "Active Notices",
     totalRevenue: "Est. Revenue",
-    
+
     // Product Management
     addProduct: "Add Product",
     editProduct: "Edit Product",
@@ -70,7 +70,7 @@ const translations = {
     cancel: "Cancel",
     delete: "Delete",
     actions: "Actions",
-    
+
     // Notifications
     addNotification: "Add Notification",
     notificationTitle: "Title",
@@ -83,16 +83,17 @@ const translations = {
     promotion: "Promotion",
     general: "General",
     status: "Status",
-    
+
     // Footer
-    footerAbout: "Bringing the authentic taste of Thailand to Bulgaria since 2020.",
+    footerAbout:
+      "Bringing the authentic taste of Thailand to Bulgaria since 2020.",
     contactUs: "Contact Us",
     followUs: "Follow Us",
     openHours: "Opening Hours",
-    monFri: "Mon - Fri: 9:00 - 20:00",
-    sat: "Sat: 10:00 - 18:00",
+    monFri: "Thu - Tue: 11:00 - 19:00",
+    sat: "Wed: 11:00 - 15:30",
     sun: "Sun: Closed",
-    address: "ul. Vitosha 45, Sofia, Bulgaria",
+    address: 'ul. "Gurgulyat" 25, 1463 Sofia, Bulgaria',
     currency: "лв",
   },
   bg: {
@@ -101,7 +102,7 @@ const translations = {
     cart: "Кошница",
     dashboard: "Табло",
     allCategories: "Всички категории",
-    
+
     rice_noodles: "Ориз и Нудли",
     sauces_pastes: "Сосове и Пасти",
     spices_herbs: "Подправки и Билки",
@@ -110,9 +111,10 @@ const translations = {
     frozen: "Замразени",
     fresh: "Пресни продукти",
     canned: "Консерви",
-    
+
     heroTitle: "Автентични тайландски вкусове",
-    heroSubtitle: "Вашият портал към най-добрите съставки от Тайланд в България",
+    heroSubtitle:
+      "Вашият портал към най-добрите съставки от Тайланд в България",
     shopNow: "Пазарувай",
     featuredProducts: "Избрани продукти",
     searchProducts: "Търси продукти...",
@@ -122,19 +124,19 @@ const translations = {
     price: "Цена",
     inStock: "В наличност",
     items: "артикула",
-    
+
     yourCart: "Вашата кошница",
     emptyCart: "Кошницата е празна",
     total: "Общо",
     checkout: "Поръчай",
     remove: "Премахни",
     continueShopping: "Продължи пазаруването",
-    
+
     description: "Описание",
     relatedProducts: "Може да ви хареса също",
     backToShop: "Обратно към магазина",
     quantity: "Количество",
-    
+
     dashboardTitle: "Табло на магазина",
     manageProducts: "Управление на продукти",
     manageNotifications: "Известия",
@@ -143,7 +145,7 @@ const translations = {
     lowStock: "Ниска наличност",
     activeNotifications: "Активни известия",
     totalRevenue: "Прибл. приходи",
-    
+
     addProduct: "Добави продукт",
     editProduct: "Редактирай продукт",
     productName: "Име на продукт",
@@ -155,7 +157,7 @@ const translations = {
     cancel: "Отказ",
     delete: "Изтрий",
     actions: "Действия",
-    
+
     addNotification: "Добави известие",
     notificationTitle: "Заглавие",
     notificationMessage: "Съобщение",
@@ -167,24 +169,25 @@ const translations = {
     promotion: "Промоция",
     general: "Общо",
     status: "Статус",
-    
+
     footerAbout: "Доставяме автентичния вкус на Тайланд в България от 2020г.",
     contactUs: "Свържете се с нас",
     followUs: "Последвайте ни",
     openHours: "Работно време",
-    monFri: "Пон - Пет: 9:00 - 20:00",
-    sat: "Съб: 10:00 - 18:00",
+    monFri: "Чет - Вто: 11:00 - 19:00",
+    sat: "Сря: 11:00 - 15:30",
     sun: "Нед: Затворено",
-    address: "ул. Витоша 45, София, България",
+    address: 'ул. "Гургулят" 25, 1463 София, България',
     currency: "лв",
-  }
+  },
 };
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState('bg');
-  
-  const t = (key) => translations[language]?.[key] || translations.en[key] || key;
-  
+  const [language, setLanguage] = useState("bg");
+
+  const t = (key) =>
+    translations[language]?.[key] || translations.en[key] || key;
+
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
@@ -194,6 +197,7 @@ export function LanguageProvider({ children }) {
 
 export function useLanguage() {
   const context = useContext(LanguageContext);
-  if (!context) throw new Error('useLanguage must be used within LanguageProvider');
+  if (!context)
+    throw new Error("useLanguage must be used within LanguageProvider");
   return context;
 }
