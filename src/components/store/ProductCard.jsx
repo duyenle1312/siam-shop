@@ -1,7 +1,7 @@
-import { useLanguage } from '../LanguageContext';
-import { useCart } from './CartContext';
-import { ShoppingBag, Package } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useLanguage } from "../LanguageContext";
+import { useCart } from "./CartContext";
+import { ShoppingBag, Package } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ProductCard({ product, onClick }) {
   const { language, t } = useLanguage();
@@ -29,7 +29,7 @@ export default function ProductCard({ product, onClick }) {
         {isOutOfStock && (
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
             <span className="bg-white/90 text-stone-800 text-xs font-semibold px-3 py-1.5 rounded-full">
-              {t('outOfStock')}
+              {t("outOfStock")}
             </span>
           </div>
         )}
@@ -58,12 +58,16 @@ export default function ProductCard({ product, onClick }) {
         <p className="text-sm text-stone-400 line-clamp-1 mb-3">
           {product.description[language]}
         </p>
-        <div className="flex items-center justify-between ">
+        <div className="flex md:flex-row flex-col md:gap-0 gap-2 items-center justify-between ">
           <span className="text-lg font-bold text-stone-900">
-            {product.price.toFixed(2)} <span className="text-sm font-medium text-stone-400">{t('currency')}</span>
+            {product.price.toFixed(2)}{" "}
+            <span className="text-sm font-medium text-stone-400">
+              {t("currency")}
+            </span>
           </span>
           <span className="text-lg font-bold text-stone-900">
-            {(product.price * 1.95583).toFixed(2)} <span className="text-sm font-medium text-stone-400">лв</span>
+            {(product.price * 1.95583).toFixed(2)}{" "}
+            <span className="text-sm font-medium text-stone-400">лв</span>
           </span>
           <button
             onClick={(e) => {
@@ -71,12 +75,15 @@ export default function ProductCard({ product, onClick }) {
               if (!isOutOfStock) addToCart(product);
             }}
             disabled={isOutOfStock}
-            className={`p-2.5 rounded-xl transition-all duration-300 ${
+            className={`p-2.5 rounded-xl text-sm gap-2 md:mt-0 mt-2 flex justify-center items-center transition-all duration-300 ${
               isOutOfStock
-                ? 'bg-stone-100 text-stone-300 cursor-not-allowed'
-                : 'bg-emerald-700 text-white hover:bg-emerald-800 hover:scale-105 active:scale-95 shadow-lg shadow-emerald-700/20'
+                ? "bg-stone-100 text-stone-300 cursor-not-allowed"
+                : "md:w-auto w-full bg-emerald-700 text-white hover:bg-emerald-800 hover:scale-105 active:scale-95 shadow-lg shadow-emerald-700/20"
             }`}
           >
+            <span className="xl:hidden">
+              {isOutOfStock ? t("outOfStock") : t("addToCart")}
+            </span>{" "}
             <ShoppingBag className="w-4 h-4" />
           </button>
         </div>
