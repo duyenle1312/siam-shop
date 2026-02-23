@@ -51,7 +51,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl">🏯</span>
+              <img
+              src="/logo.png"
+              alt="Siam Shop Logo"
+              width={52}
+              height={52}
+              className="mr-1"
+            />
+              {/* <span className="text-2xl">🏯</span> */}
               <span className="text-lg font-bold text-white tracking-tight">Siam Shop</span>
             </div>
             <p className="text-sm leading-relaxed text-stone-400">

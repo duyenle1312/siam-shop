@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
-import { LanguageProvider, useLanguage } from './components/LanguageContext';
-import { CartProvider, useCart } from './components/store/CartContext';
-import CartDrawer from './components/store/CartDrawer';
-import { ShoppingBag, Menu, X, Globe } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { Link } from "react-router-dom";
+import { createPageUrl } from "@/utils";
+import { LanguageProvider, useLanguage } from "./components/LanguageContext";
+import { CartProvider, useCart } from "./components/store/CartContext";
+import CartDrawer from "./components/store/CartDrawer";
+import { ShoppingBag, Menu, X, Globe } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 function Navbar() {
   const { language, setLanguage, t } = useLanguage();
@@ -13,8 +13,8 @@ function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { label: t('home'), page: 'Home' },
-    { label: t('products'), page: 'Products' },
+    { label: t("home"), page: "Home" },
+    { label: t("products"), page: "Products" },
     // { label: t('dashboard'), page: 'Dashboard' },
   ];
 
@@ -23,14 +23,26 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 md:px-12 lg:px-20">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to={createPageUrl('Home')} className="flex items-center gap-2.5">
-            <span className="text-xl">🏯</span>
-            <span className="text-base font-bold text-stone-900 tracking-tight hidden sm:block">Siam Shop</span>
+          <Link
+            to={createPageUrl("Home")}
+            className="flex items-center gap-2.5"
+          >
+            <img
+              src="/logo.png"
+              alt="Siam Shop Logo"
+              width={52}
+              height={52}
+              className="mr-1"
+            />
+            {/* <span className="text-xl">🏯</span> */}
+            <span className="text-base font-bold text-stone-900 tracking-tight hidden sm:block">
+              Siam Shop
+            </span>
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.map(link => (
+            {navLinks.map((link) => (
               <Link
                 key={link.page}
                 to={createPageUrl(link.page)}
@@ -45,11 +57,11 @@ function Navbar() {
           <div className="flex items-center gap-2">
             {/* Language Switcher */}
             <button
-              onClick={() => setLanguage(language === 'en' ? 'bg' : 'en')}
+              onClick={() => setLanguage(language === "en" ? "bg" : "en")}
               className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-stone-500 hover:bg-stone-50 transition-all"
             >
               <Globe className="w-3.5 h-3.5" />
-              {language === 'en' ? 'BG' : 'EN'}
+              {language === "en" ? "BG" : "EN"}
             </button>
 
             {/* Cart Button */}
@@ -74,7 +86,11 @@ function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className="md:hidden p-2 rounded-lg hover:bg-stone-50 transition-colors"
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
         </div>
@@ -84,12 +100,12 @@ function Navbar() {
           {mobileOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden overflow-hidden border-t border-stone-100"
             >
               <div className="py-3 space-y-1">
-                {navLinks.map(link => (
+                {navLinks.map((link) => (
                   <Link
                     key={link.page}
                     to={createPageUrl(link.page)}
