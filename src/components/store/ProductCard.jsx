@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLanguage } from '../LanguageContext';
 import { useCart } from './CartContext';
 import { ShoppingBag, Package } from 'lucide-react';
@@ -11,8 +10,9 @@ export default function ProductCard({ product, onClick }) {
   const isLowStock = product.inventory > 0 && product.inventory <= 5;
 
   return (
-    <motion.div
+    <motion.a
       layout
+      href={`/product/${product.slug}`} // /${product.slug}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="group relative bg-white rounded-2xl overflow-hidden border border-stone-100 hover:border-stone-200 hover:shadow-xl hover:shadow-stone-100/50 transition-all duration-500"
@@ -50,17 +50,20 @@ export default function ProductCard({ product, onClick }) {
 
       <div className="p-4">
         <h3
-          className="font-semibold text-stone-800 text-sm leading-snug mb-1 cursor-pointer hover:text-emerald-700 transition-colors line-clamp-2"
+          className="font-semibold text-stone-800 text-base leading-snug mb-1 cursor-pointer hover:text-emerald-700 transition-colors line-clamp-2"
           onClick={() => onClick?.(product)}
         >
           {product.name[language]}
         </h3>
-        <p className="text-xs text-stone-400 line-clamp-1 mb-3">
+        <p className="text-sm text-stone-400 line-clamp-1 mb-3">
           {product.description[language]}
         </p>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between ">
           <span className="text-lg font-bold text-stone-900">
-            {product.price.toFixed(2)} <span className="text-xs font-medium text-stone-400">{t('currency')}</span>
+            {product.price.toFixed(2)} <span className="text-sm font-medium text-stone-400">{t('currency')}</span>
+          </span>
+          <span className="text-lg font-bold text-stone-900">
+            {(product.price * 1.95583).toFixed(2)} <span className="text-sm font-medium text-stone-400">лв</span>
           </span>
           <button
             onClick={(e) => {
@@ -78,6 +81,6 @@ export default function ProductCard({ product, onClick }) {
           </button>
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }

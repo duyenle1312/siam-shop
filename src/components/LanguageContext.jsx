@@ -86,7 +86,7 @@ const translations = {
 
     // Footer
     footerAbout:
-      "Bringing the authentic taste of Thailand to Bulgaria since 2020.",
+      "Bringing the authentic taste of Thailand to Bulgaria since 2023.",
     contactUs: "Contact Us",
     followUs: "Follow Us",
     openHours: "Opening Hours",
@@ -94,7 +94,8 @@ const translations = {
     sat: "Wed: 11:00 - 15:30",
     sun: "Sun: Closed",
     address: 'ul. "Gurgulyat" 25, 1463 Sofia, Bulgaria',
-    currency: "лв",
+    currency: "€",
+    back: "Back",
   },
   bg: {
     home: "Начало",
@@ -170,7 +171,7 @@ const translations = {
     general: "Общо",
     status: "Статус",
 
-    footerAbout: "Доставяме автентичния вкус на Тайланд в България от 2020г.",
+    footerAbout: "Доставяме автентичния вкус на Тайланд в България от 2023г.",
     contactUs: "Свържете се с нас",
     followUs: "Последвайте ни",
     openHours: "Работно време",
@@ -178,7 +179,8 @@ const translations = {
     sat: "Сря: 11:00 - 15:30",
     sun: "Нед: Затворено",
     address: 'ул. "Гургулят" 25, 1463 София, България',
-    currency: "лв",
+    currency: "€",
+    back: "Назад",
   },
 };
 

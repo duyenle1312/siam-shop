@@ -11,7 +11,7 @@ export default function CategoryFilter({ selected, onSelect }) {
       <button
         onClick={() => onSelect(null)}
         className={cn(
-          "shrink-0 px-4 py-2 rounded-full text-xs font-medium transition-all duration-300",
+          "shrink-0 px-4 py-2 text-sm rounded-full font-medium transition-all duration-300",
           !selected
             ? "bg-emerald-700 text-white shadow-lg shadow-emerald-700/20"
             : "bg-stone-100 text-stone-500 hover:bg-stone-200"
@@ -24,7 +24,7 @@ export default function CategoryFilter({ selected, onSelect }) {
           key={cat}
           onClick={() => onSelect(cat)}
           className={cn(
-            "shrink-0 px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 whitespace-nowrap",
+            "shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap",
             selected === cat
               ? "bg-emerald-700 text-white shadow-lg shadow-emerald-700/20"
               : "bg-stone-100 text-stone-500 hover:bg-stone-200"

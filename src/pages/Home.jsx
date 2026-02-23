@@ -35,7 +35,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-6">
           {featured.map(product => (
             <ProductCard
               key={product.id}
@@ -55,7 +55,7 @@ export default function Home() {
       </section>
 
       {/* Categories Showcase */}
-      <section className="bg-stone-100/50 py-16 md:py-24">
+      <section className="bg-stone-100/50 pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <h2 className="text-3xl md:text-4xl font-bold text-stone-900 tracking-tight text-center mb-12">
             {t('allCategories')}
@@ -77,7 +77,7 @@ export default function Home() {
                   <img src={catImages[i]} alt={t(cat)} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-bold text-sm md:text-base">{t(cat)}</h3>
+                    <h3 className="text-white font-bold text-base md:text-lg">{t(cat)}</h3>
                   </div>
                 </Link>
               );

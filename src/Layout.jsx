@@ -21,7 +21,7 @@ function Navbar() {
   return (
     <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-stone-100">
       <div className="max-w-7xl mx-auto px-4 md:px-12 lg:px-20">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-18">
           {/* Logo */}
           <Link
             to={createPageUrl("Home")}
@@ -46,7 +46,7 @@ function Navbar() {
               <Link
                 key={link.page}
                 to={createPageUrl(link.page)}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-stone-600 hover:text-stone-900 hover:bg-stone-50 transition-all"
+                className="px-4 py-2 rounded-lg text-base font-medium text-stone-600 hover:text-stone-900 hover:bg-stone-50 transition-all"
               >
                 {link.label}
               </Link>

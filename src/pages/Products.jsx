@@ -5,7 +5,6 @@ import ProductCard from '../components/store/ProductCard';
 import CategoryFilter from '../components/store/CategoryFilter';
 import Footer from '../components/store/Footer';
 import { Search } from 'lucide-react';
-import { Input } from "@/components/ui/input";
 import { AnimatePresence } from 'framer-motion';
 
 export default function Products() {
