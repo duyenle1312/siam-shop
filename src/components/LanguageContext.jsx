@@ -182,6 +182,99 @@ const translations = {
     currency: "€",
     back: "Назад",
   },
+th: {
+    // Navigation
+    home: "หน้าแรก",
+    products: "สินค้า",
+    cart: "ตะกร้า",
+    dashboard: "แดชบอร์ด",
+    allCategories: "หมวดหมู่ทั้งหมด",
+
+    // Categories
+    rice_noodles: "ข้าว & เส้น",
+    sauces_pastes: "ซอส & เครื่องปรุง",
+    spices_herbs: "เครื่องเทศ & สมุนไพร",
+    snacks: "ของว่าง",
+    drinks: "เครื่องดื่ม",
+    frozen: "แช่แข็ง",
+    fresh: "ผลไม้และผักสด",
+    canned: "อาหารกระป๋อง",
+
+    // Storefront
+    heroTitle: "รสชาติไทยแท้",
+    heroSubtitle: "แหล่งวัตถุดิบคุณภาพจากประเทศไทยในบัลแกเรีย",
+    shopNow: "ช็อปเลย",
+    featuredProducts: "สินค้าขายดี",
+    searchProducts: "ค้นหาสินค้า...",
+    addToCart: "เพิ่มลงตะกร้า",
+    outOfStock: "สินค้าหมด",
+    viewAll: "ดูทั้งหมด",
+    price: "ราคา",
+    inStock: "มีสินค้า",
+    items: "ชิ้น",
+
+    // Cart
+    yourCart: "ตะกร้าของคุณ",
+    emptyCart: "ตะกร้าว่าง",
+    total: "รวม",
+    checkout: "ชำระเงิน",
+    remove: "ลบ",
+    continueShopping: "ช็อปต่อ",
+
+    // Product Detail
+    description: "คำอธิบาย",
+    relatedProducts: "สินค้าแนะนำ",
+    backToShop: "กลับไปที่ร้าน",
+    quantity: "จำนวน",
+
+    // Dashboard
+    dashboardTitle: "แดชบอร์ดร้านค้า",
+    manageProducts: "จัดการสินค้า",
+    manageNotifications: "การแจ้งเตือน",
+    overview: "ภาพรวม",
+    totalProducts: "จำนวนสินค้า",
+    lowStock: "สินค้าน้อย",
+    activeNotifications: "การแจ้งเตือนที่ใช้งานอยู่",
+    totalRevenue: "ประมาณรายได้",
+
+    // Product Management
+    addProduct: "เพิ่มสินค้า",
+    editProduct: "แก้ไขสินค้า",
+    productName: "ชื่อสินค้า",
+    productDescription: "คำอธิบาย",
+    category: "หมวดหมู่",
+    uploadImage: "อัปโหลดรูปภาพ",
+    inventory: "สต็อก",
+    save: "บันทึก",
+    cancel: "ยกเลิก",
+    delete: "ลบ",
+    actions: "การกระทำ",
+
+    // Notifications
+    addNotification: "เพิ่มการแจ้งเตือน",
+    notificationTitle: "หัวข้อ",
+    notificationMessage: "ข้อความ",
+    type: "ประเภท",
+    active: "ใช้งาน",
+    inactive: "ไม่ใช้งาน",
+    openingHours: "เวลาทำการ",
+    newProduct: "สินค้าใหม่",
+    promotion: "โปรโมชั่น",
+    general: "ทั่วไป",
+    status: "สถานะ",
+
+    // Footer
+    footerAbout: "นำรสชาติไทยแท้สู่บัลแกเรียตั้งแต่ปี 2023",
+    contactUs: "ติดต่อเรา",
+    followUs: "ติดตามเรา",
+    openHours: "เวลาทำการ",
+    monFri: "พฤ - อังคาร: 11:00 - 19:00",
+    sat: "พุธ: 11:00 - 15:30",
+    sun: "อาทิตย์: ปิด",
+    address: 'ถนน "Gurgulyat" 25, 1463 โซเฟีย, บัลแกเรีย',
+    currency: "€",
+    back: "กลับ",
+  },
 };
 
 export function LanguageProvider({ children }) {

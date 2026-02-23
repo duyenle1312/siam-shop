@@ -133,7 +133,7 @@ export default function ProductManager() {
 
       {/* Edit / Add Dialog */}
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
-        <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl">
+        <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto rounded-2xl">
           <DialogHeader>
             <DialogTitle className="text-lg font-bold">
               {editingProduct && products.find(p => p.id === editingProduct.id) ? t('editProduct') : t('addProduct')}
@@ -142,7 +142,7 @@ export default function ProductManager() {
 
           {editingProduct && (
             <div className="space-y-5 mt-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 <div>
                   <Label className="text-xs text-stone-500 mb-1.5 block">Name (EN)</Label>
                   <Input
@@ -165,9 +165,20 @@ export default function ProductManager() {
                     className="rounded-xl"
                   />
                 </div>
+                <div>
+                  <Label className="text-xs text-stone-500 mb-1.5 block">ชื่อ (TH)</Label>
+                  <Input
+                    value={editingProduct.name.th}
+                    onChange={(e) => setEditingProduct({
+                      ...editingProduct,
+                      name: { ...editingProduct.name, th: e.target.value }
+                    })}
+                    className="rounded-xl"
+                  />
+                </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-rows-3 gap-4">
                 <div>
                   <Label className="text-xs text-stone-500 mb-1.5 block">Description (EN)</Label>
                   <Textarea
@@ -186,6 +197,17 @@ export default function ProductManager() {
                     onChange={(e) => setEditingProduct({
                       ...editingProduct,
                       description: { ...editingProduct.description, bg: e.target.value }
+                    })}
+                    className="rounded-xl h-20"
+                  />
+                </div>
+                <div>
+                  <Label className="text-xs text-stone-500 mb-1.5 block">คำอธิบาย (TH)</Label>
+                  <Textarea
+                    value={editingProduct.description.th}
+                    onChange={(e) => setEditingProduct({
+                      ...editingProduct,
+                      description: { ...editingProduct.description, th: e.target.value }
                     })}
                     className="rounded-xl h-20"
                   />

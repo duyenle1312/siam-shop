@@ -2,17 +2,9 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "../components/LanguageContext";
 import ProductManager from "../components/dashboard/ProductManager";
 import NotificationManager from "../components/dashboard/NotificationManager";
-import { LayoutDashboard, Package, Bell } from "lucide-react";
+import DashboardStats from '../components/dashboard/DashboardStats';
+import { LayoutDashboard, Package, Bell } from "lucide-react"; //
 import { cn } from "@/lib/utils";
-
-// shadcn ui
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
 
 const tabs = [
   { key: "overview", icon: LayoutDashboard },
@@ -50,6 +42,7 @@ export default function Dashboard() {
   };
 
   const tabLabels = {
+    overview: t("overview"),
     products: t("manageProducts"),
     notifications: t("manageNotifications"),
   };
@@ -125,6 +118,20 @@ export default function Dashboard() {
             </div>
 
             {/* Content */}
+            {activeTab === "overview" && (
+              <div className="space-y-8">
+                <DashboardStats />
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div>
+                    <ProductManager />
+                  </div>
+                  <div>
+                    <NotificationManager />
+                  </div>
+                </div>
+              </div>
+            )}
+
             {activeTab === "products" && <ProductManager />}
             {activeTab === "notifications" && <NotificationManager />}
           </div>

@@ -11,11 +11,19 @@ function Navbar() {
   const { language, setLanguage, t } = useLanguage();
   const { cartCount, setIsCartOpen } = useCart();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+
 
   const navLinks = [
     { label: t("home"), page: "Home", url: "/" },
     { label: t("products"), page: "Products", url: "/products" },
     // { label: t('dashboard'), page: 'Dashboard' },
+  ];
+
+  const languages = [
+    { code: "en", label: "English" },
+    { code: "bg", label: "Български" },
+    { code: "th", label: "ไทย" },
   ];
 
   return (
@@ -55,14 +63,41 @@ function Navbar() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-2">
+            {/* Language Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-stone-500 hover:bg-stone-50 transition-all"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                {languages.find((l) => l.code === language)?.label}
+              </button>
+
+              {langDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-32 bg-white border border-stone-200 rounded-lg shadow-lg z-50">
+                  {languages.map((l) => (
+                    <button
+                      key={l.code}
+                      onClick={() => {
+                        setLanguage(l.code);
+                        setLangDropdownOpen(false);
+                      }}
+                      className="w-full text-left px-4 py-2 text-sm text-stone-700 hover:bg-stone-50 transition-colors rounded-t-lg last:rounded-b-lg"
+                    >
+                      {l.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
             {/* Language Switcher */}
-            <button
+            {/* <button
               onClick={() => setLanguage(language === "en" ? "bg" : "en")}
               className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-stone-500 hover:bg-stone-50 transition-all"
             >
               <Globe className="w-3.5 h-3.5" />
               {language === "en" ? "BG" : "EN"}
-            </button>
+            </button> */}
 
             {/* Cart Button */}
             <button

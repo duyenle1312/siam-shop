@@ -21,8 +21,8 @@ export default function NotificationManager() {
 
   const emptyNotif = {
     id: Date.now(),
-    title: { en: '', bg: '' },
-    message: { en: '', bg: '' },
+    title: { en: '', bg: '', th: '' },
+    message: { en: '', bg: '', th: '' },
     type: 'general',
     active: true,
     date: new Date().toISOString().split('T')[0],
@@ -109,13 +109,13 @@ export default function NotificationManager() {
       </div>
 
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
-        <DialogContent className="max-w-lg rounded-2xl">
+        <DialogContent className="max-w-5xl rounded-2xl overflow-y-auto ">
           <DialogHeader>
             <DialogTitle className="text-lg font-bold">{t('addNotification')}</DialogTitle>
           </DialogHeader>
           {editing && (
             <div className="space-y-5 mt-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 <div>
                   <Label className="text-xs text-stone-500 mb-1.5 block">Title (EN)</Label>
                   <Input
@@ -132,8 +132,16 @@ export default function NotificationManager() {
                     className="rounded-xl"
                   />
                 </div>
+                <div>
+                  <Label className="text-xs text-stone-500 mb-1.5 block">หัวข้อ (TH)</Label>
+                  <Input
+                    value={editing.title.th}
+                    onChange={(e) => setEditing({ ...editing, title: { ...editing.title, th: e.target.value } })}
+                    className="rounded-xl"
+                  />
+                </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-rows-3 gap-4">
                 <div>
                   <Label className="text-xs text-stone-500 mb-1.5 block">Message (EN)</Label>
                   <Textarea
@@ -147,6 +155,14 @@ export default function NotificationManager() {
                   <Textarea
                     value={editing.message.bg}
                     onChange={(e) => setEditing({ ...editing, message: { ...editing.message, bg: e.target.value } })}
+                    className="rounded-xl h-20"
+                  />
+                </div>
+                <div>
+                  <Label className="text-xs text-stone-500 mb-1.5 block">ข้อความ (TH)</Label>
+                  <Textarea
+                    value={editing.message.th}
+                    onChange={(e) => setEditing({ ...editing, message: { ...editing.message, th: e.target.value } })}
                     className="rounded-xl h-20"
                   />
                 </div>

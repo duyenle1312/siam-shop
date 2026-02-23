@@ -61,7 +61,7 @@ export default function ProductCard({ product, onClick }) {
           >
             {product.name[language]}
           </h3>
-          <p className="text-sm text-stone-400 line-clamp-1 mb-3">
+          <p className="text-sm text-stone-400 line-clamp-2 mb-3">
             {product.description[language]}
           </p>
           </Link>
