@@ -41,13 +41,17 @@ export default function NotificationBanner() {
               className={`flex items-start gap-3 p-3.5 border ${typeColors[notification.type]} transition-all`}
             >
               <div className="flex-1 min-w-0 text-center">
-                <div className="flex flex-row gap-2 justify-center">
-                  <Icon className="w-3 h-3 mt-0.5 shrink-0 opacity-70" />
-                  <p className="text-xs font-semibold">
-                    {notification.title[language]}
-                  </p>{" "}<span className="text-xs opacity-75">
-                  {notification.message[language]}
-                </span>
+                <div className="flex lg:flex-row flex-col gap-2 justify-center">
+                  <div className="flex flex-row gap-2 justify-center">
+                    <Icon className="w-3 h-3 mt-1 lg:mt-0.5 shrink-0 opacity-70" />
+                    <p className="lg:text-xs text-sm font-semibold">
+                      {notification.title[language]}
+                    </p>{" "}
+                  </div>
+
+                  <span className="text-xs opacity-75">
+                    {notification.message[language]}
+                  </span>
                 </div>
                 {/* <span className="text-xs opacity-75 mt-0.5">
                   {notification.message[language]}
