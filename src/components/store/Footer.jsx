@@ -60,9 +60,9 @@ export default function Footer() {
                 className="mr-1"
               />
               {/* <span className="text-2xl">🏯</span> */}
-              <span className="text-lg font-bold text-white tracking-tight">
+              {/* <span className="text-lg font-bold text-white tracking-tight">
                 Siam Shop
-              </span>
+              </span> */}
             </Link>
             <p className="text-sm leading-relaxed text-stone-400">
               {t("footerAbout")}
@@ -81,11 +81,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <span className="text-sm">(+359)879444071</span>
+                <span className="text-sm">(+359)123456789</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <span className="text-sm">supomesa@gmail.com</span>
+                <span className="text-sm">example@gmail.com</span>
               </div>
             </div>
           </div>

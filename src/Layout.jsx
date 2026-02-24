@@ -43,9 +43,9 @@ function Navbar() {
               className="mr-1"
             />
             {/* <span className="text-xl">🏯</span> */}
-            <span className="text-base font-bold text-stone-900 tracking-tight hidden sm:block">
+            {/* <span className="text-base font-bold text-stone-900 tracking-tight hidden sm:block">
               Siam Shop
-            </span>
+            </span> */}
           </Link>
 
           {/* Desktop Nav */}
