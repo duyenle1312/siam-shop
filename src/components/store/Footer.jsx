@@ -132,7 +132,7 @@ export default function Footer() {
           <p className="text-xs text-stone-500">
             © 2026 Siam Shop. All rights reserved.
           </p>
-          <p className="text-xs text-stone-500">Made with ❤️ by duyenle.com.</p>
+          <p className="text-xs text-stone-500">Made with ❤️ by <a href="https://duyenle.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">duyenle.com</a>.</p>
         </div>
       </div>
     </footer>
